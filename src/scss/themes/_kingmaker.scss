@@ -1,0 +1,9 @@
+@mixin theme {
+	--statblock-color-common: rgb(54, 69, 79);
+	--statblock-color-uncommon: rgb(143, 85, 66);
+	--statblock-color-rare: rgb(11, 37, 96);
+	--statblock-color-unique: rgb(77, 27, 106);
+	--statblock-color-alignment: rgb(97, 129, 157);
+	--statblock-color-size: rgb(25, 66, 26);
+	--statblock-color-trait: rgb(125, 143, 63);
+}

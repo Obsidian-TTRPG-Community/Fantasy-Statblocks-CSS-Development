@@ -1,0 +1,10 @@
+@mixin theme {
+	/* Bestiary Traits */
+	--statblock-color-common: rgb(54, 69, 79);
+	--statblock-color-uncommon: rgb(143, 85, 66);
+	--statblock-color-rare: rgb(11, 37, 96);
+	--statblock-color-unique: rgb(77, 27, 106);
+	--statblock-color-alignment: rgb(89, 98, 143);
+	--statblock-color-size: rgb(75, 122, 92);
+	--statblock-color-trait: rgb(86, 12, 6);
+}
