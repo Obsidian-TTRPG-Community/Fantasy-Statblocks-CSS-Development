@@ -104,9 +104,9 @@ settings:
         value: path2eblockset-theme-kingmaker
  */
 
-@use "statblock-types" as statblocks;
-@use "themes/default" as default;
-@use "themes/kingmaker" as kingmaker;
+@use 'statblock-types' as statblocks;
+@use '../themes/default' as default;
+@use '../themes/kingmaker' as kingmaker;
 
 @each $block_name in statblocks.$names {
 	body.path2e#{$block_name}-theme-default {

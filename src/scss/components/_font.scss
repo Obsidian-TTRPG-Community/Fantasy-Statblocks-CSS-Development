@@ -13,7 +13,7 @@ Pathfinder Glyphs Only and any associated classes to call those Glyphs
 [class^="glyph-"],
 [class*=" glyph-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: "Pathfinder" !important;
+	font-family: 'Pathfinder', serif !important;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -37,17 +37,9 @@ Pathfinder Glyphs Only and any associated classes to call those Glyphs
 	content: "\2b3d";
 }
 
-.glyph-delay:before {
+.glyph-free:before {
 	content: "\2b53";
 }
-
-/*
-Alternatively we can also use Free instead of Delay.
-Comment out the one you hate
-.glyph-free:before {
-content: "\2b53";
-}
-*/
 
 .glyph-reaction:before {
 	content: "\2b32";

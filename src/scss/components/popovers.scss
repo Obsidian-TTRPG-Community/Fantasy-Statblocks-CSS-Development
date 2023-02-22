@@ -1,0 +1,109 @@
+@use 'statblock-types' as statblocks;
+@use '../themes/default' as default;
+
+body {
+	--popover-border        : rgba(226, 105, 134, 1) 1px dashed;
+	--popover-border-radius : 0px;
+	--popover-height        : max-content;
+	--popover-max-height    : max-content;
+	--popover-min-height    : fit-content;
+	--popover-overflow      : scroll;
+	--popover-padding       : 1em;
+	--popover-top-height    : 2em;
+	--popover-width         : fit-content;
+}
+
+
+/* Normal Popover Borderless Preview; Tis Nice*/
+.popover.hover-popover {
+	> .markdown-embed {
+		> .markdown-embed-content {
+			> .markdown-preview-view {
+				padding: var(--popover-padding);
+			}
+		}
+	}
+
+	/* Applied to TTRPG Statblock Path2e Block Only */
+	body {
+		.popover.hover-popover {
+			> .markdown-embed {
+				> .markdown-embed-content {
+					> .markdown-preview-view {
+						@each $block_name in statblocks.$names {
+							.statblock.path2e#{$block_name}  {
+								border     : var(--popover-border);
+								height     : var(--popover-height);
+								max-height : var(--popover-max-height);
+								width      : var(--popover-width);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Applied to Admonition Only */
+body {
+	.popover.hover-popover {
+		> .markdown-embed {
+			> .markdown-embed-content {
+				> .markdown-preview-view {
+					> .admonition.statblock-pf2e {
+						border     : var(--popover-border);
+						height     : var(--popover-height);
+						max-height : var(--popover-max-height);
+						width      : var(--popover-width);
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ITS Fixes; Always so complicated :) */
+/* Admonitions and Embed */
+.popover.hover-popover {
+	.markdown-embed:has(.admonition.statblock-pf2e) {
+		border     : var(--popover-border);
+		height     : var(--popover-height);
+		max-height : var(--popover-max-height);
+		width      : var(--popover-width);
+	}
+}
+
+/* Admonitions and Popover */
+.popover.hover-popover:has(.admonition.statblock-pf2e) {
+	border     : var(--popover-border);
+	height     : var(--popover-height);
+	max-height : var(--popover-max-height);
+	width      : var(--popover-width);
+}
+
+/* Statblock and Embed */
+.popover.hover-popover {
+	@each $block_name in statblocks.$names {
+		.markdown-embed:has(.statblock.path2e#{$block_name}) {
+			border: var(--popover-border);
+			height: var(--popover-height);
+			max-height: var(--popover-max-height);
+			width: var(--popover-width);
+		}
+	}
+}
+
+/* Statblock and Popover */
+@each $block_name in statblocks.$names {
+	.popover.hover-popover:has(.statblock.path2e#{$block_name}) {
+		border     : var(--popover-border);
+		height     : var(--popover-height);
+		max-height : var(--popover-max-height);
+		top        : var(--popover-top-height);
+		width      : var(--popover-width);
+	}
+}
+
+
+
