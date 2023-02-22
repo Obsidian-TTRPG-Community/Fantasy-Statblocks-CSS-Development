@@ -1,0 +1,38 @@
+@use 'attribution';
+@use 'font';
+@use 'style-settings';
+@use 'statblock-types' as statblocks;
+@use '../themes/default' as default;
+
+
+@each $block_name in statblocks.$names {
+	.statblock.path2e#{$block_name} {
+		.statblock-item-inline:has(.statblock-inline-item .name) {
+			/* Formatting of the statblock heading */
+			display: flex;
+			flex-direction: row;
+			margin-inline: 0.25em;
+			gap: 0.25em;
+
+			.statblock-inline-item {
+				&:has(.name) {
+					flex: 1;
+					}
+
+				.name,
+				.level {
+					p {
+						align-self: flex-start;
+						font-size: 1.2em;
+						font-weight: 900;
+						text-transform: uppercase;
+						}
+
+					span.property-name {
+						display: none;
+						}
+					}
+				}
+			}
+		}
+	}

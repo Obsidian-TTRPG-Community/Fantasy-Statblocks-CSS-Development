@@ -1,0 +1,54 @@
+@use 'attribution';
+@use 'font';
+@use 'style-settings';
+@use 'statblock-types' as statblocks;
+@use '../themes/default' as default;
+
+
+@each $block_name in statblocks.$names {
+	.statblock.path2e#{$block_name} {
+		img {
+			display: inline;
+			position: relative;
+			border: none;
+			transform: rotateY(180deg);
+			}
+
+		.image-container {
+			text-align: center;
+			}
+		.token {
+			> a {
+				display: inline;
+				}
+			}
+		.image {
+			width: var(--statblock-image-width);
+			height: var(--statblock-image-height);
+			display: inline;
+			max-height: fit-content;
+			max-width: fit-content;
+			transform: rotateY(180deg);
+			}
+
+		.statblock-inline-item {
+			& .image {
+				width: fit-content;
+				height: fit-content;
+
+				img {
+					border: none;
+					display: inline;
+					position: relative;
+					align-self: center;
+					object-fit: contain;
+					transform: rotateY(180deg);
+					}
+
+				& .pointer {
+					cursor: pointer;
+					}
+				}
+			}
+			}
+		}
