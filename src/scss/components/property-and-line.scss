@@ -1,0 +1,26 @@
+@use 'attribution';
+@use 'font';
+@use 'style-settings';
+@use 'statblock-types' as statblocks;
+@use '../themes/default' as default;
+
+
+@each $block_name in statblocks.$names {
+	.statblock.path2e#{$block_name} {
+		.line {
+			line-height: var(--statblock-property-line-height);
+			display: block;
+			color: var(--statblock-property-line-font-color);
+		}
+
+		.statblock-rendered-text-content {
+			color: var(--statblock-property-name-font-color);
+			font-weight: var(--statblock-property-name-font-weight);
+		}
+
+		.statblock-markdown,
+		.property {
+			line-height: var(--statblock-property-line-height);
+		}
+	}
+}

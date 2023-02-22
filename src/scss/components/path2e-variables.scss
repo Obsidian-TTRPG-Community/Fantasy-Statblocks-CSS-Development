@@ -1,0 +1,122 @@
+@use 'attribution.scss';
+@use 'font.scss';
+@use 'style-settings.scss';
+@use 'statblock-types.scss' as statblocks;
+@use '../themes/default' as default;
+
+@each $block_name in statblocks.$names {
+	.statblock.path2e#{$block_name} {
+		@include default.theme;
+
+		--statblock-primary-color: rgba(51, 51, 51, 1);
+		--statblock-rule-color: rgba(51, 51, 51, 1);
+		--statblock-background-color: rgba(246, 244, 242, 1);
+
+		--statblock-bar-color: rgba(51, 51, 51, 1);
+		--statblock-bar-border-size: 1px;
+		--statblock-bar-border-color: rgba(51, 51, 51, 1);
+
+		--statblock-image-width: 75px;
+		--statblock-image-height: 75px;
+		--statblock-image-border-size: 2px;
+		--statblock-image-border-color: rgba(51, 51, 51, 1);
+
+		--statblock-border-size: 1px;
+		--statblock-border-color: rgba(51, 51, 51, 1);
+
+		--statblock-box-shadow-color: rgba(255, 215, 0, 1);
+		--statblock-box-shadow-x-offset: 0;
+		--statblock-box-shadow-y-offset: 0;
+		--statblock-box-shadow-blur: 1.5em;
+
+		--statblock-font-color: rgba(51, 51, 51, 1);
+		--statblock-font-weight: 400;
+
+		--statblock-content-font: system-ui, 'Pathfinder', -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+		--statblock-content-font-size: 13px;
+
+		--statblock-heading-font: system-ui, 'Pathfinder', -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+		--statblock-heading-font-color: rgba(51, 51, 51, 1);
+		--statblock-heading-font-size: 1.35em;
+		--statblock-heading-font-variant: small-caps;
+		--statblock-heading-font-weight: 700;
+		--statblock-heading-line-height: 1;
+
+		--statblock-property-line-height: 1.33em;
+		--statblock-property-font-color: rgba(51, 51, 51, 1);
+		--statblock-property-name-font-color: rgba(51, 51, 51, 1);
+		--statblock-property-name-font-weight: bold;
+
+		--statblock-section-heading-border-size: 1px;
+		--statblock-section-heading-border-color: transparent;
+		--statblock-section-heading-font-color: rgba(51, 51, 51, 1);
+		--statblock-section-heading-font-size: 1.33 empx;
+		--statblock-section-heading-font-variant: small-caps;
+		--statblock-section-heading-font-weight: 400;
+
+		--statblock-saves-line-height: 1.33em;
+
+		--statblock-spells-font-style: italic;
+
+
+		--statblock-table-header-font-weight: bold;
+
+		/* Done with Default Variables; now my additions */
+		--statblock-text-normal: rgb(--color-base-100);
+		--statblock-text-muted: rgb(--color-base-50);
+		--statblock-text-faint: rgba(--statblock-primary-color, 0.5);
+
+		/* Hyperlinks need more help; cant see them. */
+		--statblock-hyperlink-color: rgba(61, 102, 142, 1);
+		--statblock-hyperlink-text-decoration: rgba(51, 51, 51, 1) underline solid;
+		--statblock-hyperlink-text-shadow: 0.5px 0.5px 0.5px rgba(61, 102, 142, 1);
+
+		/* Italic can use a custom color. Don't like it? Change it! */
+		--statblock-italic-font-color: rgba(77, 27, 105, 1);
+
+		--statblock-column-width: 400px;
+		--statblock-column2-width: 1000px;
+
+		--statblock-traits-box-sizing: border-box;
+		--statblock-traits-font-color: rgba(255, 255, 255, 1);
+		--statblock-traits-letter-spacing: 0.01em;
+		--statblock-traits-gap: 2px;
+		--statblock-traits-margins: 0 var(--statblock-traits-gap) 0 0;
+		--statblock-traits-min-width: 4em;
+		--statblock-traits-padding: 0.4em 1.1em 0.2em;
+		--statblock-traits-text-align: center;
+		--statblock-traits-text-transform: uppercase;
+		--statblock-traits-font-size: 12px;
+		--statblock-traits-font-style: normal;
+		--statblock-traits-font-weight: 900;
+
+		/* UL/LI Control */
+		--statblock-list-bullet-border: none;
+		--statblock-list-bullet-radius: 50%;
+		--statblock-list-bullet-size: 0.3em;
+		--statblock-list-bullet-transform: none;
+		--statblock-list-numbered-style: decimal;
+		--statblock-list-indent: 2em;
+		--statblock-list-margin-block-start: 1em;
+		--statblock-list-margin-block-end: 1em;
+		--statblock-list-margin-inline-start: 0px;
+		--statblock-list-margin-inline-end: 0px;
+		--statblock-list-marker-color: blue;
+		--statblock-list-marker-color-collapsed: var(--text-accent);
+		--statblock-list-marker-color-hover: var(--text-muted);
+		--statblock-list-padding-inline-start: 40px;
+		--statblock-list-padding-top: 0;
+		--statblock-list-padding-bottom: 0;
+		--statblock-list-spacing: 0.075em;
+		--statblock-list-style-type: disc;
+		--statblock-list-text-align: -webkit-match-parent;
+
+		/* Name and Level Control */
+		--statblock-upper-level-padding: 2em;
+		--statblock-upper-level-margin: 2em;
+	}
+}

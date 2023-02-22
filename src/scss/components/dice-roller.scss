@@ -1,0 +1,17 @@
+@use 'attribution';
+@use 'font';
+@use 'style-settings';
+@use 'statblock-types' as statblocks;
+@use '../themes/default' as default;
+
+@each $block_name in statblocks.$names {
+	.statblock.path2e#{$block_name} {
+		.dice-roller-result {
+			font-weight: var(--statblock-font-weight);
+		}
+
+		.roller-result {
+			font-weight: var(--statblock-font-weight);
+		}
+	}
+}

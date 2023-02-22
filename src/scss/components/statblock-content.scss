@@ -1,0 +1,108 @@
+@use 'attribution';
+@use 'font';
+@use 'style-settings';
+@use 'statblock-types' as statblocks;
+@use '../themes/default' as default;
+
+$path2e-bar-color: rgba(51, 51, 51, 1);
+
+
+@each $block_name in statblocks.$names {
+	.statblock.path2e#{$block_name} {
+		.statblock-content {
+			font-family: var(--statblock-content-font);
+			font-size: var(--statblock-content-font-size);
+			color: rgba(51, 51, 51, 1);
+			background-color: var(--statblock-background-color);
+			padding: 0.5em;
+			border: var(--statblock-border-size) var(--statblock-border-color) solid;
+			box-shadow: 0 0 var(--statblock-box-shadow-blur) var(--statblock-box-shadow-color);
+			margin: 0.5em 2px;
+			display: flex;
+			gap: 1rem;
+
+
+			.statblock-detached {
+				position: absolute;
+				top: -9999px;
+			}
+
+			.statblock-item-container {
+				margin: 0;
+				padding: 0;
+			}
+
+			.statblock-item-inline {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-content: flex-start;
+				align-items: baseline;
+				justify-content: flex-start;
+				margin: 0;
+				padding: 0;
+			}
+
+			& > .column {
+				width: var(--statblock-column-width);
+				& > :is(.statblock-item-container, .statblock-item-inline) {
+					&:has(.line, .property) {
+						margin-block: 0.25rem;
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+					&:has(.line.name) {
+						margin: 0;
+					}
+					& > :is(.property, .line:has(.property-name)) {
+						margin-left: 1em;
+					}
+
+					& > :is(.property, .line) .property-name {
+						margin-left: -1em;
+					}
+				}
+				& > .statblock-item-container:has(.tapered-rule) {
+					margin-block: 0.25rem;
+				}
+
+				& > .statblock-item-inline:has(.name) + .statblock-item-container:has(.tapered-rule) {
+					margin-top: 0;
+				}
+
+				& > .statblock-item-inline:has(.rare_01,
+					.rare_02,
+					.rare_03,
+					.rare_04,
+					.alignment,
+					.size,
+					.xp,
+					.kingdom_xp,
+					.trait_01,
+					.trait_02,
+					.trait_03,
+					.trait_04,
+					.trait_05,
+					.trait_06,
+					.trait_07) {
+					row-gap: var(--statblock-traits-gap);
+
+					@if $block_name == 'block' {
+						margin-top: 0.5em;
+					} @else {
+						margin-bottom: 0.5em;
+					}
+				}
+
+				/* Hazard Block Specific */
+				@if $block_name == 'blockhaz' {
+					& > .statblock-item-container:has(.effect) {
+						margin-left: 1em;
+					}
+				}
+			}
+		}
+	}
+}
