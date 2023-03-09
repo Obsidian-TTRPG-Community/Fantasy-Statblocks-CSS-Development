@@ -6,7 +6,7 @@
 
 
 @each $block_name in statblocks.$names {
-	.statblock.path2e#{$block_name} {
+	.statblock.#{$block_name} {
 		@media screen and (max-width: 400px) {
 			.statblock-content > :global(.column) {
 				width: 75vw;

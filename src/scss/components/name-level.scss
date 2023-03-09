@@ -6,15 +6,16 @@
 
 
 @each $block_name in statblocks.$names {
-	.statblock.path2e#{$block_name} {
+	.statblock.#{$block_name} {
 		.statblock-item-inline:has(.statblock-inline-item .name) {
 			/* Formatting of the statblock heading */
 			display: flex;
 			flex-direction: row;
 			margin-inline: 0.25em;
 			gap: 0.25em;
+			align-items: center;
 
-			.statblock-inline-item {
+			.statblock-inline-item.property-container {
 				&:has(.name) {
 					flex: 1;
 				}
@@ -23,8 +24,9 @@
 				.level {
 					p {
 						align-self: flex-start;
-						font-size: 1.2em;
+						font-size: 1.3em;
 						font-weight: 900;
+						line-height: 1.5em;
 						text-transform: uppercase;
 					}
 
@@ -32,6 +34,14 @@
 						display: none;
 					}
 				}
+			}
+
+			.pathfinder-2e-quest-icon {
+				display: block;
+				height: var(--statblock-header-image-height);
+				width: unset;
+				max-width: unset;
+				padding: var(--statblock-header-image-padding);
 			}
 		}
 	}

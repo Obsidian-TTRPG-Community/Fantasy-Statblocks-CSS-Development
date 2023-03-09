@@ -7,7 +7,7 @@
 
 
 @each $block_name in statblocks.$names {
-	.statblock.path2e#{$block_name} {
+	.statblock.#{$block_name} {
 
 		.traits {
 			margin: 0 0.25em 0 0;

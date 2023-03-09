@@ -1,107 +1,107 @@
 /*!
 /* @settings
-name: Pathfinder Statblocks
-id: path2eblock
+name: Pathfinder 2e Statblocks
+id: pathfinder-2e-statblocks
 collapsed: true
 settings:
   -
-    id: statblock-theme-creature
+    id: layout-theme-basic
     title: Creature Statblock Theme
     description: The theme of the creature statblock
     type: class-select
     allowEmpty: false
-    default: path2eblock-theme-default
+    default: basic-pathfinder-2e-layout-theme-default
     options:
     -
         label: Default
-        value: path2eblock-theme-default
+        value: basic-pathfinder-2e-layout-theme-default
     -
         label: Kingmaker
-        value: path2eblock-theme-kingmaker
+        value: basic-pathfinder-2e-layout-theme-kingmaker
   -
-    id: statblock-theme-action
+    id: layout-theme-action
     title: Action Statblock Theme
     description: The theme of the action statblock
     type: class-select
     allowEmpty: false
-    default: path2eblockact-theme-default
+    default: pathfinder-2e-action-layout-theme-default
     options:
     -
         label: Default
-        value: path2eblockact-theme-default
+        value: pathfinder-2e-action-layout-theme-default
     -
         label: Kingmaker
-        value: path2eblockact-theme-kingmaker
+        value: pathfinder-2e-action-layout-theme-kingmaker
   -
-    id: statblock-theme-hazard
+    id: layout-theme-hazard
     title: Hazard Statblock Theme
     description: The theme of the hazard statblock
     type: class-select
     allowEmpty: false
-    default: path2eblockhaz-theme-default
+    default: pathfinder-2e-hazard-layout-theme-default
     options:
     -
         label: Default
-        value: path2eblockhaz-theme-default
+        value: pathfinder-2e-hazard-layout-theme-default
     -
         label: Kingmaker
-        value: path2eblockhaz-theme-kingmaker
+        value: pathfinder-2e-hazard-layout-theme-kingmaker
   -
-    id: statblock-theme-influence
+    id: layout-theme-influence
     title: Influence Statblock Theme
     description: The theme of the influence subsystem statblock
     type: class-select
     allowEmpty: false
-    default: path2eblockinf-theme-default
+    default: pathfinder-2e-influence-layout-theme-default
     options:
     -
         label: Default
-        value: path2eblockinf-theme-default
+        value: pathfinder-2e-influence-layout-theme-default
     -
         label: Kingmaker
-        value: path2eblockinf-theme-kingmaker
+        value: pathfinder-2e-influence-layout-theme-kingmaker
   -
-    id: statblock-theme-misc
+    id: layout-theme-misc
     title: Misc Statblock Theme
     description: The theme of the misc statblock
     type: class-select
     allowEmpty: false
-    default: path2eblockmisc-theme-default
+    default: pathfinder-2e-misc-layout-theme-default
     options:
     -
         label: Default
-        value: path2eblockmisc-theme-default
+        value: pathfinder-2e-misc-layout-theme-default
     -
         label: Kingmaker
-        value: path2eblockmisc-theme-kingmaker
+        value: pathfinder-2e-misc-layout-theme-kingmaker
   -
-    id: statblock-theme-quest
+    id: layout-theme-quest
     title: Quest Statblock Theme
     description: The theme of the quest statblock
     type: class-select
     allowEmpty: false
-    default: path2eblockquest-theme-default
+    default: pathfinder-2e-quest-layout-theme-default
     options:
     -
         label: Default
-        value: path2eblockquest-theme-default
+        value: pathfinder-2e-quest-layout-theme-default
     -
         label: Kingmaker
-        value: path2eblockquest-theme-kingmaker
+        value: pathfinder-2e-quest-layout-theme-kingmaker
   -
-    id: statblock-theme-set
+    id: layout-theme-settlement
     title: Settlement Statblock Theme
     description: The theme of the settlement statblock
     type: class-select
     allowEmpty: false
-    default: path2eblockset-theme-default
+    default: pathfinder-2e-settlement-layout-theme-default
     options:
     -
         label: Default
-        value: path2eblockset-theme-default
+        value: pathfinder-2e-settlement-layout-theme-default
     -
         label: Kingmaker
-        value: path2eblockset-theme-kingmaker
+        value: pathfinder-2e-settlement-layout-theme-kingmaker
  */
 
 @use 'statblock-types' as statblocks;
@@ -109,8 +109,8 @@ settings:
 @use '../themes/kingmaker' as kingmaker;
 
 @each $block_name in statblocks.$names {
-	body.path2e#{$block_name}-theme-default {
-		.statblock.path2e#{$block_name} {
+	body.#{$block_name}-theme-default {
+		.statblock.#{$block_name} {
 			@include default.theme;
 		}
 	}
@@ -118,8 +118,8 @@ settings:
 
 
 @each $block_name in statblocks.$names {
-	body.path2e#{$block_name}-theme-kingmaker {
-		.statblock.path2e#{$block_name} {
+	body.#{$block_name}-theme-kingmaker {
+		.statblock.#{$block_name} {
 			@include kingmaker.theme;
 		}
 	}

@@ -5,7 +5,7 @@
 @use '../themes/default' as default;
 
 @each $block_name in statblocks.$names {
-	.statblock.path2e#{$block_name} {
+	.statblock.#{$block_name} {
 		a,
 		a:-webkit-any-link,
 		a.internal-link {

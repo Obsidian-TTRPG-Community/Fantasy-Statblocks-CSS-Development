@@ -7,7 +7,7 @@
 $path2e-bar-color: rgba(51, 51, 51, 1);
 
 @each $block_name in statblocks.$names {
-	.statblock.path2e#{$block_name} {
+	.statblock.#{$block_name} {
 		.bar {
 			height: 1px;
 			background: $path2e-bar-color;;

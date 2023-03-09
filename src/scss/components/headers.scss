@@ -10,7 +10,7 @@ $path2e-header-letter-spacing: 1px;
 
 
 @each $block_name in statblocks.$names {
-	.statblock.path2e#{$block_name} {
+	.statblock.#{$block_name} {
 		.flex-container {
 			align-items: center;
 			display: flex;

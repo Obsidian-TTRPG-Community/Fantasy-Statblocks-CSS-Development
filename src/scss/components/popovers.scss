@@ -31,7 +31,7 @@ body {
 				> .markdown-embed-content {
 					> .markdown-preview-view {
 						@each $block_name in statblocks.$names {
-							.statblock.path2e#{$block_name}  {
+							.statblock.#{$block_name}  {
 								border     : var(--popover-border);
 								height     : var(--popover-height);
 								max-height : var(--popover-max-height);
@@ -85,7 +85,7 @@ body {
 /* Statblock and Embed */
 .popover.hover-popover {
 	@each $block_name in statblocks.$names {
-		.markdown-embed:has(.statblock.path2e#{$block_name}) {
+		.markdown-embed:has(.statblock.#{$block_name}) {
 			border: var(--popover-border);
 			height: var(--popover-height);
 			max-height: var(--popover-max-height);
@@ -96,7 +96,7 @@ body {
 
 /* Statblock and Popover */
 @each $block_name in statblocks.$names {
-	.popover.hover-popover:has(.statblock.path2e#{$block_name}) {
+	.popover.hover-popover:has(.statblock.#{$block_name}) {
 		border     : var(--popover-border);
 		height     : var(--popover-height);
 		max-height : var(--popover-max-height);
