@@ -4,7 +4,10 @@
 @use 'statblock-types' as statblocks;
 @use '../themes/default' as default;
 
+$center-align: center;
+$flex: flex;
 
+// Le Style
 @each $block_name in statblocks.$names {
 	.statblock.#{$block_name} {
 		@media screen and (max-width: 400px) {
@@ -21,16 +24,16 @@
 		}
 
 		.table {
-			display: flex;
+			display: $flex;
 			justify-content: space-evenly;
-			align-items: center;
+			align-items: $center-align;
 			flex-wrap: wrap;
 		}
 
 		.table-item {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			display: $flex;
+			justify-content: $center-align;
+			align-items: $center-align;
 			flex-flow: column nowrap;
 		}
 	}

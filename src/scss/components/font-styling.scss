@@ -1,17 +1,29 @@
+// Use
 @use 'attribution';
 @use 'font';
 @use 'style-settings';
 @use 'statblock-types' as statblocks;
 @use '../themes/default' as default;
 
+// Local Variables
+$pathfinder-blue-link: rgb(61, 102, 142);
+$pathfinder-purple-em: rgb(77, 27, 105);
+$padding-and-margin-zero: 0;
+$none: none;
+$margin-blocks: 1em;
+$text-align-start: start;
+
+
+// Le Style
+
 @each $block_name in statblocks.$names {
 	.statblock.#{$block_name} {
 		a,
 		a:-webkit-any-link,
 		a.internal-link {
-			color: var(--statblock-hyperlink-color);
-			font-weight: bolder;
-			text-decoration: var(--statblock-hyperlink-text-decoration);
+			color: $pathfinder-blue-link;
+			font-weight: var(--statblock-property-name-font-weight);
+			text-decoration: $none;
 		}
 		b,
 		strong,
@@ -23,30 +35,30 @@
 		em,
 		.cm-em {
 			font-style: italic;
-			color: var(--statblock-italic-font-color);
+			color: $pathfinder-purple-em;
 			font-weight: 500;
 		}
-
+		
 		ul {
 			/* Corrects the UL/LI Coloration */
 			display: block;
-			list-style-type: var(--statblock-list-style-type);
-			margin-block-start: var(--statblock-list-margin-block-start);
-			margin-block-end: var(--statblock-list-margin-block-end);
-			margin-inline-start: var(--statblock-list-margin-inline-start);
-			margin-inline-end: var(--statblock-list-margin-inline-end);
-			padding-inline-start: var(--statblock-list-padding-inline-start);
+			list-style-type: disc;
+			margin-block-start: $margin-blocks;
+			margin-block-end: $margin-blocks;
+			margin-inline-start: $padding-and-margin-zero;
+			margin-inline-end: $padding-and-margin-zero;
+			padding-inline-start: 40px;
 		}
 
 		.markdown-rendered ul,
 		.markdown-rendered ol {
-			padding-inline-start: var(--statblock-list-indent);
+			padding-inline-start: 2em;
 		}
 
 		li {
 			color: var(--statblock-content-font);
 			display: list-item;
-			text-align: var(--statblock-list-text-align);
+			text-align: -webkit-match-parent;
 		}
 
 		.markdown-source-view ol > li,
@@ -55,25 +67,24 @@
 		.markdown-preview-view ul > li,
 		.markdown-rendered ul > li,
 		.mod-cm6 .HyperMD-list-line.cm-line {
-			padding-top: var(--statblock-list-padding-top);
-			padding-bottom: var(--statblock-list-padding-bottom);
+			padding-top: $padding-and-margin-zero;
+			padding-bottom: $padding-and-margin-zero;
 		}
 
 		ol > li::marker,
 		ul > li::marker,
 		.cm-s-obsidian .cm-formatting-list {
-			color: var(--list-marker-color);
+			color: var(--statblock-property-name-font-color);
 		}
 
 		::marker {
 			unicode-bidi: isolate;
 			font-variant-numeric: tabular-nums;
-			text-transform: none;
-			text-indent: 0;
-			text-align: start;
-			text-align-last: start;
+			text-transform: $none;
+			text-indent: $padding-and-margin-zero;
+			text-align: $text-align-start;
+			text-align-last: $text-align-start;
 		}
 
 	}
 }
-

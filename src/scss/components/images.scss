@@ -4,45 +4,54 @@
 @use 'statblock-types' as statblocks;
 @use '../themes/default' as default;
 
+// Local Var
+$fine-inline: inline;
+$the-shoe-fits: fit-content;
+$positioned-ideal: center;
+$no-borders: none;
+$relative-position: relative;
+$spin-540: rotateY(180deg);
+
+// Le Style
 
 @each $block_name in statblocks.$names {
 	.statblock.#{$block_name} {
 		img {
-			display: inline;
-			position: relative;
-			border: none;
-			transform: rotateY(180deg);
+			display: $fine-inline;
+			position: $relative-position;
+			border: $no-borders;
+			transform: $spin-540;
 		}
 
 		.image-container {
-			text-align: center;
+			text-align: $positioned-ideal;
 		}
 		.token {
 			> a {
-				display: inline;
+				display: $fine-inline;
 			}
 		}
 		.image {
 			width: var(--statblock-image-width);
 			height: var(--statblock-image-height);
-			display: inline;
-			max-height: fit-content;
-			max-width: fit-content;
-			transform: rotateY(180deg);
+			display: $fine-inline;
+			max-height: $the-shoe-fits;
+			max-width: $the-shoe-fits;
+			transform: $spin-540;
 		}
 
 		.statblock-inline-item {
 			& .image {
-				width: fit-content;
-				height: fit-content;
+				width: $the-shoe-fits;
+				height: $the-shoe-fits;
 
 				img {
-					border: none;
-					display: inline;
-					position: relative;
-					align-self: center;
+					border: $no-borders;
+					display: $fine-inline;
+					position: $relative-position;
+					align-self: $positioned-ideal;
 					object-fit: contain;
-					transform: rotateY(180deg);
+					transform: $spin-540;
 				}
 
 				& .pointer {

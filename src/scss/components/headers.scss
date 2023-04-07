@@ -7,6 +7,7 @@
 
 
 $path2e-header-letter-spacing: 1px;
+$the-in-between: space-between;
 
 
 @each $block_name in statblocks.$names {
@@ -14,7 +15,7 @@ $path2e-header-letter-spacing: 1px;
 		.flex-container {
 			align-items: center;
 			display: flex;
-			justify-content: space-between;
+			justify-content: $the-in-between;
 		}
 		.heading {
 			align-items: center;
@@ -24,7 +25,7 @@ $path2e-header-letter-spacing: 1px;
 			font-size: 1.35em;
 			font-variant: small-caps;
 			font-weight: 700;
-			justify-content: space-between;
+			justify-content: $the-in-between;
 			letter-spacing: $path2e-header-letter-spacing;
 			line-height: 1;
 			margin: 0;
@@ -46,13 +47,11 @@ $path2e-header-letter-spacing: 1px;
 		.HyperMD-header-3,
 		.inline-title[data-level='3'],
 		.HyperMD-list-line .cm-header-3 {
-			font-variant: var(--statblock-h3-variant);
-			letter-spacing: var(--statblock-h3-letter-spacing);
-			line-height: var(--statblock-h3-line-height);
-			font-size: var(--statblock-h3-size);
-			color: var(--statblock-h3-color);
+			font-variant: petite-caps;
+			letter-spacing: $path2e-header-letter-spacing;
+			line-height: 1;
+			font-size: 1.25em;
+			color: var(--statblock-section-heading-font-color);
 		}
 	}
 }
-
-
