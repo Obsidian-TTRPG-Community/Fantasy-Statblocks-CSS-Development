@@ -1,15 +1,14 @@
-@use 'attribution';
-@use 'font';
-@use 'style-settings';
-@use 'statblock-types' as statblocks;
-@use '../themes/default' as default;
+@use "attribution";
+@use "font";
+@use "style-settings";
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
 
-$path2e-bar-color: rgba(51, 51, 51, 1);
-$i-like-zeros: 0;
-$margin-left: 1em;
-$half-length: 0.5em;
-$margin-block: 0.25rem;
-$flex: flex;
+$statblock-content-text-indent-size: 1em;
+$statblock-content-container-spacing: 0.25em;
+
+$statblock-content-padding: 0.5em;
+$statblock-content-margin: 0.5em 2px;
 
 
 @each $block_name in statblocks.$names {
@@ -19,11 +18,11 @@ $flex: flex;
 			border: var(--statblock-border-size) var(--statblock-border-color) solid;
 			box-shadow: none;
 			color: var(--statblock-property-font-color);
-			display: $flex;
+			display: flex;
 			font-family: var(--statblock-content-font);
 			font-size: var(--statblock-content-font-size);
-			margin: $half-length 2px;
-			padding: $half-length;
+			margin: $statblock-content-margin;
+			padding: $statblock-content-padding;
 			gap: 1rem;
 
 
@@ -33,48 +32,64 @@ $flex: flex;
 			}
 
 			.statblock-item-container {
-				margin: $i-like-zeros;
-				padding: $i-like-zeros;
+				margin: 0;
+				padding: 0;
 			}
 
 			.statblock-item-inline {
 				align-content: flex-start;
 				align-items: baseline;
-				display: $flex;
+				display: flex;
 				flex-direction: row;
 				flex-wrap: wrap;
 				justify-content: flex-start;
-				margin: $i-like-zeros;
-				padding: $i-like-zeros;
+				margin: 0;
+				padding: 0;
 			}
 
 			& > .column {
 				width: var(--statblock-column-width);
-				& > :is(.statblock-item-container, .statblock-item-inline) {
-					&:has(.line, .property) {
-						margin-block: $margin-block;
 
-						&:last-child {
-							margin-bottom: $i-like-zeros;
-						}
-					}
-					&:has(.line.name) {
-						margin: $i-like-zeros;
-					}
-					& > :is(.property, .line:has(.property-name)) {
-						margin-left: $margin-left;
+				& > .property-container {
+					& > .line:has(> .property-name) {
+						margin-left: $statblock-content-text-indent-size;
 					}
 
-					& > :is(.property, .line) .property-name {
-						margin-left: -$margin-left;
+					& > .line > .property-name {
+						margin-left: -$statblock-content-text-indent-size;
 					}
 				}
+
+				& .traits-container {
+					& > .statblock-trait-prop {
+						& > .property:has(> .property-name) {
+							margin-left: $statblock-content-text-indent-size;
+						}
+
+						& > .property > .property-name {
+							margin-left: -$statblock-content-text-indent-size;
+						}
+					}
+				}
+
+				& > :is(.statblock-item-container, .statblock-item-inline) {
+					// block spacing of containers
+					&:has(.line, .property) {
+						margin-block: $statblock-content-container-spacing;
+
+						// remove margin bottom on last child
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+
 				& > .statblock-item-container:has(.tapered-rule) {
-					margin-block: $margin-block;
+					margin-block: $statblock-content-container-spacing;
 				}
 
 				& > .statblock-item-inline:has(.name) + .statblock-item-container:has(.tapered-rule) {
-					margin-top: $i-like-zeros;
+					margin-top: 0;
 				}
 
 				& > .statblock-item-inline:has(.rare_01,
@@ -94,17 +109,13 @@ $flex: flex;
 					.trait_07) {
 					row-gap: var(--statblock-traits-gap);
 
-					@if $block_name == 'basic-pathfinder-2e-layout' {
-						margin-top: $half-length;
-					} @else {
-						margin-bottom: $half-length;
-					}
+					margin-bottom: $statblock-content-container-spacing * 2;
 				}
 
 				/* Hazard Block Specific */
-				@if $block_name == 'pathfinder-2e-hazard-layout' {
+				@if $block_name == "pathfinder-2e-hazard-layout" {
 					& > .statblock-item-container:has(.effect) {
-						margin-left: $margin-left;
+						margin-left: $statblock-content-text-indent-size;
 					}
 				}
 			}

@@ -1,29 +1,29 @@
-@use 'attribution';
-@use 'font';
-@use 'style-settings';
-@use 'statblock-types' as statblocks;
-@use '../themes/default' as default;
+@use "attribution";
+@use "font";
+@use "style-settings";
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
 
-$path2e-bar-color: rgba(51, 51, 51, 1);
-$width-1px: 1px;
-$unset: unset;
+$statblock-bar-color: rgba(51, 51, 51, 1);
+$statblock-bar-width: 1px;
 
 @each $block_name in statblocks.$names {
 	.statblock.#{$block_name} {
 		.bar {
-			height: $width-1px;
-			background: $path2e-bar-color;;
-			border: $width-1px solid $path2e-bar-color;;
+			height: $statblock-bar-width;
+			background: $statblock-bar-color;;
+			border: $statblock-bar-width solid $statblock-bar-color;;
 			z-index: 1;
 			width: fit-content;
 		}
+
 		div.tapered-rule {
 			width: auto;
 			margin: 0;
-			height: $width-1px;
-			background: $path2e-bar-color;
-			clip-path: $unset !important;
-			-webkit-clip-path: $unset;
+			height: $statblock-bar-width;
+			background: $statblock-bar-color;
+			clip-path: unset !important;
+			-webkit-clip-path: unset;
 		}
 	}
 }

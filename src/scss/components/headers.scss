@@ -1,22 +1,19 @@
-@use 'attribution';
-@use 'font';
-@use 'style-settings';
-@use 'statblock-types' as statblocks;
-@use '../themes/default' as default;
+@use "attribution";
+@use "font";
+@use "style-settings";
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
 
-
-
-$path2e-header-letter-spacing: 1px;
-$the-in-between: space-between;
-
+$statblock-header-letter-spacing: 1px;
 
 @each $block_name in statblocks.$names {
 	.statblock.#{$block_name} {
 		.flex-container {
 			align-items: center;
 			display: flex;
-			justify-content: $the-in-between;
+			justify-content: space-between;
 		}
+
 		.heading {
 			align-items: center;
 			color: var(--statblock-heading-font-color);
@@ -25,30 +22,33 @@ $the-in-between: space-between;
 			font-size: 1.35em;
 			font-variant: small-caps;
 			font-weight: 700;
-			justify-content: $the-in-between;
-			letter-spacing: $path2e-header-letter-spacing;
+			justify-content: space-between;
+			letter-spacing: $statblock-header-letter-spacing;
 			line-height: 1;
 			margin: 0;
 		}
+
 		.section-header {
 			border: none;
 			color: var(--statblock-section-heading-font-color);
 			font-size: var(--statblock-section-heading-font-size);
 			font-variant: var(--statblock-section-heading-font-variant);
 			font-weight: var(--statblock-section-heading-font-weight);
-			letter-spacing: $path2e-header-letter-spacing;
+			letter-spacing: $statblock-header-letter-spacing;
 			margin-bottom: 0.3em;
 		}
+
 		h3.section-header {
 			display: none;
 		}
+
 		h3,
 		.markdown-rendered h3,
 		.HyperMD-header-3,
-		.inline-title[data-level='3'],
+		.inline-title[data-level="3"],
 		.HyperMD-list-line .cm-header-3 {
 			font-variant: petite-caps;
-			letter-spacing: $path2e-header-letter-spacing;
+			letter-spacing: $statblock-header-letter-spacing;
 			line-height: 1;
 			font-size: 1.25em;
 			color: var(--statblock-section-heading-font-color);

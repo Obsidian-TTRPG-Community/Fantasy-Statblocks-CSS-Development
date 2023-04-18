@@ -1,8 +1,8 @@
-@use 'attribution';
-@use 'font';
-@use 'style-settings';
-@use 'statblock-types' as statblocks;
-@use '../themes/default' as default;
+@use "attribution";
+@use "font";
+@use "style-settings";
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
 
 
 @each $block_name in statblocks.$names {
@@ -16,6 +16,7 @@
 		.statblock-rendered-text-content {
 			color: var(--statblock-property-name-font-color);
 			font-weight: var(--statblock-property-name-font-weight);
+			font-style: normal;
 		}
 
 		.statblock-markdown,

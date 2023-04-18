@@ -1,13 +1,13 @@
-@use 'attribution';
-@use 'font';
-@use 'style-settings';
-@use 'statblock-types' as statblocks;
-@use '../themes/default' as default;
+@use "attribution";
+@use "font";
+@use "style-settings";
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
 
 // Local Variables
-$elmer-glue-white: rgb(255, 255, 255);
-$traits-font-weight: 900;
-$traits-font-style: normal;
+$statblock-trait-text-color: rgb(255, 255, 255);
+$statblock-trait-font-weight: 900;
+$statblock-trait-font-style: normal;
 
 
 @each $block_name in statblocks.$names {
@@ -16,8 +16,8 @@ $traits-font-style: normal;
 		.traits {
 			margin: 0 0.25em 0 0;
 			display: inline;
-			font-weight: $traits-font-weight !important;
-			font-style: $traits-font-style !important;
+			font-weight: $statblock-trait-font-weight !important;
+			font-style: $statblock-trait-font-style !important;
 		}
 
 
@@ -76,10 +76,10 @@ $traits-font-style: normal;
 		.trait_05,
 		.trait_06,
 		.trait_07 {
-			color: $elmer-glue-white !important;
+			color: $statblock-trait-text-color !important;
 			font-size: 12px;
-			font-style: $traits-font-style !important;
-			font-weight: $traits-font-weight !important;
+			font-style: $statblock-trait-font-style !important;
+			font-weight: $statblock-trait-font-weight !important;
 			letter-spacing: 0.01em;
 			min-width: 4em;
 			margin: 0 var(--statblock-traits-gap) 0 0;

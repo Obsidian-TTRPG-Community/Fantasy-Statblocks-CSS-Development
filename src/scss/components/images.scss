@@ -1,57 +1,54 @@
-@use 'attribution';
-@use 'font';
-@use 'style-settings';
-@use 'statblock-types' as statblocks;
-@use '../themes/default' as default;
+@use "attribution";
+@use "font";
+@use "style-settings";
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
 
 // Local Var
-$fine-inline: inline;
-$the-shoe-fits: fit-content;
-$positioned-ideal: center;
-$no-borders: none;
-$relative-position: relative;
-$spin-540: rotateY(180deg);
+$statblock-image-rotation: rotateY(180deg);
 
 // Le Style
 
 @each $block_name in statblocks.$names {
 	.statblock.#{$block_name} {
 		img {
-			display: $fine-inline;
-			position: $relative-position;
-			border: $no-borders;
-			transform: $spin-540;
+			display: inline;
+			position: relative;
+			border: none;
+			transform: $statblock-image-rotation;
 		}
 
 		.image-container {
-			text-align: $positioned-ideal;
+			text-align: center;
 		}
+
 		.token {
 			> a {
-				display: $fine-inline;
+				display: inline;
 			}
 		}
+
 		.image {
 			width: var(--statblock-image-width);
 			height: var(--statblock-image-height);
-			display: $fine-inline;
-			max-height: $the-shoe-fits;
-			max-width: $the-shoe-fits;
-			transform: $spin-540;
+			display: inline;
+			max-height: fit-content;
+			max-width: fit-content;
+			transform: $statblock-image-rotation;
 		}
 
 		.statblock-inline-item {
 			& .image {
-				width: $the-shoe-fits;
-				height: $the-shoe-fits;
+				width: fit-content;
+				height: fit-content;
 
 				img {
-					border: $no-borders;
-					display: $fine-inline;
-					position: $relative-position;
-					align-self: $positioned-ideal;
+					border: none;
+					display: inline;
+					position: relative;
+					align-self: center;
 					object-fit: contain;
-					transform: $spin-540;
+					transform: $statblock-image-rotation;
 				}
 
 				& .pointer {

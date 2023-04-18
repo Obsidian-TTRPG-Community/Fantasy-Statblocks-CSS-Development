@@ -104,9 +104,9 @@ settings:
         value: pathfinder-2e-settlement-layout-theme-kingmaker
  */
 
-@use 'statblock-types' as statblocks;
-@use '../themes/default' as default;
-@use '../themes/kingmaker' as kingmaker;
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
+@use "../themes/kingmaker" as kingmaker;
 
 @each $block_name in statblocks.$names {
 	body.#{$block_name}-theme-default {

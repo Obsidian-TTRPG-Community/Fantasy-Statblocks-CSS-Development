@@ -1,18 +1,14 @@
 // Use
-@use 'attribution';
-@use 'font';
-@use 'style-settings';
-@use 'statblock-types' as statblocks;
-@use '../themes/default' as default;
+@use "attribution";
+@use "font";
+@use "style-settings";
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
 
 // Local Variables
-$pathfinder-blue-link: rgb(61, 102, 142);
-$pathfinder-purple-em: rgb(77, 27, 105);
-$padding-and-margin-zero: 0;
-$none: none;
-$margin-blocks: 1em;
-$text-align-start: start;
-
+$statblock-font-color-blue: rgb(61, 102, 142);
+$statblock-font-color-purple: rgb(77, 27, 105);
+$statblock-ul-margin: 0 0.5em;
 
 // Le Style
 
@@ -21,32 +17,31 @@ $text-align-start: start;
 		a,
 		a:-webkit-any-link,
 		a.internal-link {
-			color: $pathfinder-blue-link;
+			color: $statblock-font-color-blue;
 			font-weight: var(--statblock-property-name-font-weight);
-			text-decoration: $none;
+			text-decoration: none;
 		}
+
 		b,
 		strong,
 		.cm-strong {
 			font-weight: var(--statblock-property-name-font-weight);
 			color: var(--statblock-property-name-font-color);
 		}
+
 		i,
 		em,
 		.cm-em {
 			font-style: italic;
-			color: $pathfinder-purple-em;
+			color: $statblock-font-color-purple;
 			font-weight: 500;
 		}
-		
+
 		ul {
 			/* Corrects the UL/LI Coloration */
 			display: block;
 			list-style-type: disc;
-			margin-block-start: $margin-blocks;
-			margin-block-end: $margin-blocks;
-			margin-inline-start: $padding-and-margin-zero;
-			margin-inline-end: $padding-and-margin-zero;
+			margin: $statblock-ul-margin;
 			padding-inline-start: 40px;
 		}
 
@@ -67,8 +62,8 @@ $text-align-start: start;
 		.markdown-preview-view ul > li,
 		.markdown-rendered ul > li,
 		.mod-cm6 .HyperMD-list-line.cm-line {
-			padding-top: $padding-and-margin-zero;
-			padding-bottom: $padding-and-margin-zero;
+			padding-top: 0;
+			padding-bottom: 0;
 		}
 
 		ol > li::marker,
@@ -80,10 +75,10 @@ $text-align-start: start;
 		::marker {
 			unicode-bidi: isolate;
 			font-variant-numeric: tabular-nums;
-			text-transform: $none;
-			text-indent: $padding-and-margin-zero;
-			text-align: $text-align-start;
-			text-align-last: $text-align-start;
+			text-transform: none;
+			text-indent: 0;
+			text-align: start;
+			text-align-last: start;
 		}
 
 	}

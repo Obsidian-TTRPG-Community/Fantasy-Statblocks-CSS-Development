@@ -21,7 +21,7 @@ const fileDev = `${dir}/Pathfinder2E-TTRPG-Statblock-CSS-DEV.css`;
 
 esbuild.build({
 	/** Entry point should be where everything is imported into. */
-	entryPoints: ["src/scss/index.scss"],
+	entryPoints: ["index.scss"],
 
 	/** npm run dev will watch for file changes and rebuild instantly. */
 	watch: !prod,
