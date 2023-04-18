@@ -5,6 +5,7 @@
 @use '../themes/default' as default;
 
 
+$unset: unset;
 @each $block_name in statblocks.$names {
 	.statblock.#{$block_name} {
 		.statblock-item-inline:has(.statblock-inline-item .name) {
@@ -39,8 +40,8 @@
 			.pathfinder-2e-quest-icon {
 				display: block;
 				height: var(--statblock-header-image-height);
-				width: unset;
-				max-width: unset;
+				width: $unset;
+				max-width: $unset;
 				padding: var(--statblock-header-image-padding);
 			}
 		}

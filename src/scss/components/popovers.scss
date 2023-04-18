@@ -1,109 +1,50 @@
 @use 'statblock-types' as statblocks;
 @use '../themes/default' as default;
 
+$popover-border: rgb(226, 105, 134) 0 dashed;
+$popover-border-radius: 0;
+$pop-max-vh: 50vh;
+$pop-vw: 75vw;
+$popover-overflow: scroll;
+$popover-padding: 10px;
+$popover-top-height: 1em;
+
+// This needs to stay as a dash variable and not be repeated 100 times
 body {
-	--popover-border        : rgba(226, 105, 134, 1) 1px dashed;
-	--popover-border-radius : 0px;
-	--popover-height        : max-content;
-	--popover-max-height    : max-content;
-	--popover-min-height    : fit-content;
-	--popover-overflow      : scroll;
-	--popover-padding       : 1em;
-	--popover-top-height    : 2em;
-	--popover-width         : fit-content;
+	--popover-width: none;
+	--popover-max-height: none;
+	--pop-over-height: none;
 }
 
-
-/* Normal Popover Borderless Preview; Tis Nice*/
-.popover.hover-popover {
-	> .markdown-embed {
-		> .markdown-embed-content {
-			> .markdown-preview-view {
-				padding: var(--popover-padding);
-			}
-		}
-	}
-
-	/* Applied to TTRPG Statblock Path2e Block Only */
-	body {
-		.popover.hover-popover {
-			> .markdown-embed {
-				> .markdown-embed-content {
-					> .markdown-preview-view {
-						@each $block_name in statblocks.$names {
-							.statblock.#{$block_name}  {
-								border     : var(--popover-border);
-								height     : var(--popover-height);
-								max-height : var(--popover-max-height);
-								width      : var(--popover-width);
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-/* Applied to Admonition Only */
+// Normal Popover Borderless Preview; Tis Nice
 body {
 	.popover.hover-popover {
 		> .markdown-embed {
 			> .markdown-embed-content {
 				> .markdown-preview-view {
-					> .admonition.statblock-pf2e {
-						border     : var(--popover-border);
-						height     : var(--popover-height);
-						max-height : var(--popover-max-height);
-						width      : var(--popover-width);
+					padding: $popover-padding;
+					@each $block_name in statblocks.$names {
+						.admonition.statblock-pf2e,
+						.statblock.#{$block_name} {
+							//border: $popover-border; This is for testing purposes
+							border-radius: $popover-border-radius;
+							max-height: $pop-max-vh;
+							width: $pop-vw;
+						}
 					}
 				}
 			}
 		}
-	}
-}
 
-/* ITS Fixes; Always so complicated :) */
-/* Admonitions and Embed */
-.popover.hover-popover {
-	.markdown-embed:has(.admonition.statblock-pf2e) {
-		border     : var(--popover-border);
-		height     : var(--popover-height);
-		max-height : var(--popover-max-height);
-		width      : var(--popover-width);
-	}
-}
+		&:has(.admonition.statblock-pf2e, .statblock) {
+			border: $popover-border;
+			border-radius: $popover-border-radius;
+			max-height: $pop-max-vh;
+			width: $pop-vw;
+		}
 
-/* Admonitions and Popover */
-.popover.hover-popover:has(.admonition.statblock-pf2e) {
-	border     : var(--popover-border);
-	height     : var(--popover-height);
-	max-height : var(--popover-max-height);
-	width      : var(--popover-width);
-}
-
-/* Statblock and Embed */
-.popover.hover-popover {
-	@each $block_name in statblocks.$names {
-		.markdown-embed:has(.statblock.#{$block_name}) {
-			border: var(--popover-border);
-			height: var(--popover-height);
-			max-height: var(--popover-max-height);
-			width: var(--popover-width);
+		&:has(.statblock) {
+			top: $popover-top-height;
 		}
 	}
 }
-
-/* Statblock and Popover */
-@each $block_name in statblocks.$names {
-	.popover.hover-popover:has(.statblock.#{$block_name}) {
-		border     : var(--popover-border);
-		height     : var(--popover-height);
-		max-height : var(--popover-max-height);
-		top        : var(--popover-top-height);
-		width      : var(--popover-width);
-	}
-}
-
-
-
