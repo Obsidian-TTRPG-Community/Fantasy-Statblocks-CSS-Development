@@ -3,48 +3,46 @@
 
 $popover-border: rgb(226, 105, 134) 0 dashed;
 $popover-border-radius: 0;
-$pop-max-vh: 50vh;
+$pop-max-vh: 50%;
+$pop-max-vw: 50%;
 $pop-vw: 75vw;
 $popover-overflow: scroll;
 $popover-padding: 10px;
 $popover-top-height: 1em;
 
-// This needs to stay as a dash variable and not be repeated 100 times
-body {
-	--popover-width: none;
-	--popover-max-height: none;
-	--pop-over-height: none;
-}
 
 // Normal Popover Borderless Preview; Tis Nice
-body {
 	.popover.hover-popover {
 		> .markdown-embed {
 			> .markdown-embed-content {
 				> .markdown-preview-view {
 					padding: $popover-padding;
 					@each $block_name in statblocks.$names {
-						.admonition.statblock-pf2e,
+						.statblock-pf2e,
 						.statblock.#{$block_name} {
-							//border: $popover-border; This is for testing purposes
-							border-radius: $popover-border-radius;
+							aspect-ratio: 16 / 9;
 							max-height: $pop-max-vh;
-							width: $pop-vw;
+							max-width: $pop-max-vw;
+
+							// border: $popover-border; This is for testing purposes
+							// border-radius: $popover-border-radius; This is for Testing Purposes
 						}
 					}
 				}
 			}
 		}
 
-		&:has(.admonition.statblock-pf2e, .statblock) {
-			border: $popover-border;
-			border-radius: $popover-border-radius;
+		&:has(.statblock-pf2e, .basic-pathfinder-2e-layout, .pathfinder-2e) {
+			aspect-ratio: 16 / 9;
+
 			max-height: $pop-max-vh;
-			width: $pop-vw;
+			max-width: $pop-max-vw !important;
+
+			// border: $popover-border; This is for testing purposes
+			// border-radius: $popover-border-radius; This is for Testing Purposes
 		}
 
-		&:has(.statblock) {
+		&:has(.basic-pathfinder-2e-layout, .pathfinder-2e) {
 			top: $popover-top-height;
 		}
 	}
-}
