@@ -1,10 +1,11 @@
 @use 'SRC/scss/components/attribution';
-@use 'SRC/scss/components/font';
 @use 'SRC/scss/components/statblock-types' as statblocks;
-// Variables
-@use 'SRC/scss/components/path2e-variables';
-@use 'SRC/scss/components/style-settings';
 @use 'SRC/scss/themes/default' as default;
+@use 'SRC/scss/components/style-settings';
+
+// Variables
+@use 'src/scss/components/variables';
+@use 'SRC/scss/components/font';
 
 // Core Features
 @use 'SRC/scss/components/statblock-content';
@@ -16,7 +17,7 @@
 @use 'SRC/scss/components/images';
 @use 'SRC/scss/components/traits';
 
-// Additions
+// Additions and Fun Stuff
 @use 'SRC/scss/components/dice-roller';
 @use 'SRC/scss/components/misc';
 @use 'SRC/scss/components/popovers';
