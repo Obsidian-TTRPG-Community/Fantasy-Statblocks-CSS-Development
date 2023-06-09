@@ -1,0 +1,20 @@
+@use '../../shared-variables/common-colors' as *;
+
+.statblock[class*='bnb'] {
+  em:not(strong), em a {
+    font-family: 'Fira-Sans-Book-Italic', "BnB-Font", sans-serif;
+    font-style: italic;
+    color: $dim-gray;
+  }
+  strong:not(.name), strong a {
+    font-family: 'Din-Rundschrift-Eng', "BnB-Font", sans-serif;
+    font-weight: 700;
+    color: $fine-wine;
+  }
+
+  strong a {
+    > em a {
+      color: $burnt-orange;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.statblock[class*='bnb'] {
+  & .line.weapon {
+    display: block;
+    padding-top: 1rem;
+  }
+
+  & .line.special {
+    font-size: 0.9375rem;
+    margin-top: 0.3125rem;
+    margin-bottom: 0.3125rem;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+  }
+
+  & .line.type {
+    font-style: italic;
+  }
+}

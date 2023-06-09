@@ -1,0 +1,41 @@
+@use '../../shared-variables/font-variables' as font-vars;
+@use '../../shared-variables/fonts/PF2E-Action-Font' as *;
+
+/*
+Pathfinder Glyphs Only and any associated classes to call those Glyphs
+*/
+
+[class^="glyph-"],
+[class*=" glyph-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'Pathfinder-Actions', serif !important;
+	font-style: font-vars.$font-400;
+	font-weight: font-vars.$font-400;
+	font-variant: font-vars.$font-400;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.glyph-1action:before {
+	content: "\2b3b";
+}
+
+.glyph-2actions:before {
+	content: "\2b3a";
+}
+
+.glyph-3actions:before {
+	content: "\2b3d";
+}
+
+.glyph-free:before {
+	content: "\2b53";
+}
+
+.glyph-reaction:before {
+	content: "\2b32";
+}
