@@ -1,0 +1,60 @@
+@use "attribution";
+@use "pf2e-glyphs";
+@use "style-settings";
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
+
+// Local Var
+$statblock-image-rotation: rotateY(180deg);
+
+// Le Style
+
+@each $block_name in statblocks.$names {
+	.statblock.#{$block_name} {
+		img {
+			display: inline;
+			position: relative;
+			border: none;
+			transform: $statblock-image-rotation;
+		}
+
+		.image-container {
+			text-align: center;
+		}
+
+		.token {
+			> a {
+				display: inline;
+			}
+		}
+
+		.image {
+			width: var(--statblock-image-width);
+			height: var(--statblock-image-height);
+			display: inline;
+			max-height: fit-content;
+			max-width: fit-content;
+			transform: $statblock-image-rotation;
+		}
+
+		.statblock-inline-item {
+			& .image {
+				width: fit-content;
+				height: fit-content;
+
+				img {
+					border: none;
+					display: inline;
+					position: relative;
+					align-self: center;
+					object-fit: contain;
+					transform: $statblock-image-rotation;
+				}
+
+				& .pointer {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

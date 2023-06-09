@@ -1,0 +1,8 @@
+$bnb-link-color: rgb(184, 76, 130, 1);
+
+.statblock[class*='bnb'] {
+  a {
+    text-decoration: none;
+    color: $bnb-link-color;
+  }
+}

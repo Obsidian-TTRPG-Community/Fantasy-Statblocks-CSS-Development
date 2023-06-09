@@ -1,0 +1,24 @@
+@use 'pf2e/components/attribution';
+@use 'pf2e/components/statblock-types' as statblocks;
+@use 'pf2e/themes/default' as default;
+@use 'pf2e/components/style-settings';
+
+// Variables
+@use 'pf2e/components/variables';
+@use 'shared-variables/fonts/PF2E-Action-Font';
+@use 'pf2e/components/pf2e-glyphs';
+
+// Core Features
+@use 'pf2e/components/statblock-content';
+@use 'pf2e/components/bars-rulers';
+@use 'pf2e/components/headers';
+@use 'pf2e/components/font-styling';
+@use 'pf2e/components/property-and-line';
+@use 'pf2e/components/name-level';
+@use 'pf2e/components/images';
+@use 'pf2e/components/traits';
+
+// Additions and Fun Stuff
+@use 'pf2e/components/dice-roller';
+@use 'pf2e/components/misc';
+// @use 'SRC/scss/components/popovers';

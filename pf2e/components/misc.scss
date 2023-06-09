@@ -1,0 +1,38 @@
+@use "attribution";
+@use "pf2e-glyphs";
+@use "style-settings";
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
+
+// Le Style
+@each $block_name in statblocks.$names {
+	.statblock.#{$block_name} {
+		@media screen and (max-width: 400px) {
+			.statblock-content > :global(.column) {
+				width: 75vw;
+			}
+		}
+
+		.spell-line .spells {
+			font-style: var(--statblock-spells-font-style);
+		}
+
+		.statblock-table-header {
+			font-weight: var(--statblock-table-header-font-weight);
+		}
+
+		.table {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		.table-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-flow: column nowrap;
+		}
+	}
+}

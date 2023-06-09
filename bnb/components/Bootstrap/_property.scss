@@ -1,0 +1,11 @@
+// Styling
+.statblock[class*='bnb'] {
+  // Global Property-Name Settings
+  & .property-name {
+    font-family: var(--statblock-property-name-font-family);
+  }
+
+  & .property-text {
+    font-family: var(--statblock-content-font);
+  }
+}

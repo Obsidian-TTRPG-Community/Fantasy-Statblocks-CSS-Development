@@ -1,0 +1,24 @@
+$bnb-traits-background-color: rgba(224, 225, 221, 0.9);
+
+.statblock.basic-bnb-bestiary-layout  {
+  & .health, .shield, .armor, .traits {
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 10.3125rem;
+    padding-left: 0.1875rem;
+    border-width: 1rem;
+    border-color: $bnb-traits-background-color;
+    background-color: $bnb-traits-background-color;
+
+    &.property-name {
+      font-family: var(--statblock-property-name-font-family);
+      font-weight: 700;
+    }
+
+    & p {
+      font-family: var(--statblock-content-font);
+    }
+  }
+}

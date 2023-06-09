@@ -1,0 +1,383 @@
+@use '../../shared-variables/fonts/BnB-Icon-Font.scss' as *;
+
+$BNB-Font-Path: "fonts" !default;
+
+$BnBFonthover-ufo: "\e1940";
+$BnBFontleapfrog: "\e1941";
+$BnBFontfly-wing: "\e1942";
+$BnBFontteleport: "\e1943";
+$BnBFontswimming-tail: "\e1944";
+$BnBFontclimb-mountain: "\e1945";
+$BnBFontburrow-mole: "\e1946";
+$BnBFontmp5-SMG: "\e1947";
+$BnBFontstun-grenade: "\e1948";
+$BnBFontsawed-off-shotgun: "\e1949";
+$BnBFontpanzerfaust-RPG: "\e194a";
+$BnBFontsteyr-aug-AR: "\e194b";
+$BnBFontuzi-SMG: "\e194c";
+$BnBFontrevolver: "\e194d";
+$BnBFontpistol: "\e194e";
+$BnBFontUnarmed: "\e194f";
+$BnBFontValora: "\e1950";
+$BnBFontPangoblin: "\e1951";
+$BnBFontBONK: "\e1952";
+$BnBFontKleave: "\e1953";
+$BnBFontSwift: "\e1954";
+$BnBFontice-bomb: "\e1955";
+$BnBFontcorrosive-bomb: "\e1956";
+$BnBFontexplosive-bomb: "\e1957";
+$BnBFontunlit-bomb: "\e1958";
+$BnBFontbolt-bomb: "\e1959";
+$BnBFontfire-bomb: "\e195a";
+$BnBFontPlasma: "\e195b";
+$BnBFontCult-of-the-Vault-Potion-It-Radiates-Money: "\e195c";
+$BnBFontCult-of-the-Marcus-Potion-Cooler: "\e195d";
+$BnBFontCult-of-the-Dragon-Potion: "\e195e";
+$BnBFontHandsome-Potion: "\e195f";
+$BnBFontA-Harmless-Potion: "\e1960";
+$BnBFontCure-Hangover-Potion: "\e1961";
+$BnBFontMoxxi-Potion: "\e1962";
+$BnBFontTinaPotion: "\e1963";
+$BnBFontarmor: "\e1964";
+$BnBFonthealth: "\e1965";
+$BnBFontheartbeat: "\e1966";
+$BnBFontheart: "\e1967";
+$BnBFontshield: "\e1968";
+$BnBFontmagic-swirl: "\e1969";
+$BnBFontBarrel: "\e196a";
+$BnBFontclaptrap-water-gun: "\e196b";
+$BnBFontheavy-bullets: "\e196c";
+$BnBFontrifle: "\e196d";
+$BnBFontbullets: "\e196e";
+$BnBFontshotgun-rounds: "\e196f";
+$BnBFontskull-burn: "\e1970";
+$BnBFontskull: "\e1971";
+$BnBFontIncendiary: "\e1972";
+$BnBFontIncendiaradiation: "\e1973";
+$BnBFontRadiation: "\e1974";
+$BnBFontShock: "\e1975";
+$BnBFontCorroshock: "\e1976";
+$BnBFontCorrosion: "\e1977";
+$BnBFontCryo: "\e1978";
+$BnBFontExplosivCryo: "\e1979";
+$BnBFontExplosive: "\e197a";
+
+[class^="BnB-Font"], [class*=" BnB-Font"] {
+  /*! use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'BnB-Font', serif !important;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  
+  /*! Enable Ligatures ================ */
+  text-transform: none;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /*! Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.BnBFonthover-ufo {
+  &:before {
+    content: $BnBFonthover-ufo; 
+  }
+}
+.BnBFontleapfrog {
+  &:before {
+    content: $BnBFontleapfrog; 
+  }
+}
+.BnBFontfly-wing {
+  &:before {
+    content: $BnBFontfly-wing; 
+  }
+}
+.BnBFontteleport {
+  &:before {
+    content: $BnBFontteleport; 
+  }
+}
+.BnBFontswimming-tail {
+  &:before {
+    content: $BnBFontswimming-tail; 
+  }
+}
+.BnBFontclimb-mountain {
+  &:before {
+    content: $BnBFontclimb-mountain; 
+  }
+}
+.BnBFontburrow-mole {
+  &:before {
+    content: $BnBFontburrow-mole; 
+  }
+}
+.BnBFontmp5-SMG {
+  &:before {
+    content: $BnBFontmp5-SMG; 
+  }
+}
+.BnBFontstun-grenade {
+  &:before {
+    content: $BnBFontstun-grenade; 
+  }
+}
+.BnBFontsawed-off-shotgun {
+  &:before {
+    content: $BnBFontsawed-off-shotgun; 
+  }
+}
+.BnBFontpanzerfaust-RPG {
+  &:before {
+    content: $BnBFontpanzerfaust-RPG; 
+  }
+}
+.BnBFontsteyr-aug-AR {
+  &:before {
+    content: $BnBFontsteyr-aug-AR; 
+  }
+}
+.BnBFontuzi-SMG {
+  &:before {
+    content: $BnBFontuzi-SMG; 
+  }
+}
+.BnBFontrevolver {
+  &:before {
+    content: $BnBFontrevolver; 
+  }
+}
+.BnBFontpistol {
+  &:before {
+    content: $BnBFontpistol; 
+  }
+}
+.BnBFontUnarmed {
+  &:before {
+    content: $BnBFontUnarmed; 
+  }
+}
+.BnBFontValora {
+  &:before {
+    content: $BnBFontValora; 
+  }
+}
+.BnBFontPangoblin {
+  &:before {
+    content: $BnBFontPangoblin; 
+  }
+}
+.BnBFontBONK {
+  &:before {
+    content: $BnBFontBONK; 
+  }
+}
+.BnBFontKleave {
+  &:before {
+    content: $BnBFontKleave; 
+  }
+}
+.BnBFontSwift {
+  &:before {
+    content: $BnBFontSwift; 
+  }
+}
+.BnBFontice-bomb {
+  &:before {
+    content: $BnBFontice-bomb; 
+  }
+}
+.BnBFontcorrosive-bomb {
+  &:before {
+    content: $BnBFontcorrosive-bomb; 
+  }
+}
+.BnBFontexplosive-bomb {
+  &:before {
+    content: $BnBFontexplosive-bomb; 
+  }
+}
+.BnBFontunlit-bomb {
+  &:before {
+    content: $BnBFontunlit-bomb; 
+  }
+}
+.BnBFontbolt-bomb {
+  &:before {
+    content: $BnBFontbolt-bomb; 
+  }
+}
+.BnBFontfire-bomb {
+  &:before {
+    content: $BnBFontfire-bomb; 
+  }
+}
+.BnBFontPlasma {
+  &:before {
+    content: $BnBFontPlasma; 
+  }
+}
+.BnBFontCult-of-the-Vault-Potion-It-Radiates-Money {
+  &:before {
+    content: $BnBFontCult-of-the-Vault-Potion-It-Radiates-Money; 
+  }
+}
+.BnBFontCult-of-the-Marcus-Potion-Cooler {
+  &:before {
+    content: $BnBFontCult-of-the-Marcus-Potion-Cooler; 
+  }
+}
+.BnBFontCult-of-the-Dragon-Potion {
+  &:before {
+    content: $BnBFontCult-of-the-Dragon-Potion; 
+  }
+}
+.BnBFontHandsome-Potion {
+  &:before {
+    content: $BnBFontHandsome-Potion; 
+  }
+}
+.BnBFontA-Harmless-Potion {
+  &:before {
+    content: $BnBFontA-Harmless-Potion; 
+  }
+}
+.BnBFontCure-Hangover-Potion {
+  &:before {
+    content: $BnBFontCure-Hangover-Potion; 
+  }
+}
+.BnBFontMoxxi-Potion {
+  &:before {
+    content: $BnBFontMoxxi-Potion; 
+  }
+}
+.BnBFontTinaPotion {
+  &:before {
+    content: $BnBFontTinaPotion; 
+  }
+}
+.BnBFontarmor {
+  &:before {
+    content: $BnBFontarmor; 
+  }
+}
+.BnBFonthealth {
+  &:before {
+    content: $BnBFonthealth; 
+  }
+}
+.BnBFontheartbeat {
+  &:before {
+    content: $BnBFontheartbeat; 
+  }
+}
+.BnBFontheart {
+  &:before {
+    content: $BnBFontheart; 
+  }
+}
+.BnBFontshield {
+  &:before {
+    content: $BnBFontshield; 
+  }
+}
+.BnBFontmagic-swirl {
+  &:before {
+    content: $BnBFontmagic-swirl; 
+  }
+}
+.BnBFontBarrel {
+  &:before {
+    content: $BnBFontBarrel; 
+  }
+}
+.BnBFontclaptrap-water-gun {
+  &:before {
+    content: $BnBFontclaptrap-water-gun; 
+  }
+}
+.BnBFontheavy-bullets {
+  &:before {
+    content: $BnBFontheavy-bullets; 
+  }
+}
+.BnBFontrifle {
+  &:before {
+    content: $BnBFontrifle; 
+  }
+}
+.BnBFontbullets {
+  &:before {
+    content: $BnBFontbullets; 
+  }
+}
+.BnBFontshotgun-rounds {
+  &:before {
+    content: $BnBFontshotgun-rounds; 
+  }
+}
+.BnBFontskull-burn {
+  &:before {
+    content: $BnBFontskull-burn; 
+  }
+}
+.BnBFontskull {
+  &:before {
+    content: $BnBFontskull; 
+  }
+}
+.BnBFontIncendiary {
+  &:before {
+    content: $BnBFontIncendiary; 
+  }
+}
+.BnBFontIncendiaradiation {
+  &:before {
+    content: $BnBFontIncendiaradiation; 
+  }
+}
+.BnBFontRadiation {
+  &:before {
+    content: $BnBFontRadiation; 
+  }
+}
+.BnBFontShock {
+  &:before {
+    content: $BnBFontShock; 
+  }
+}
+.BnBFontCorroshock {
+  &:before {
+    content: $BnBFontCorroshock; 
+  }
+}
+.BnBFontCorrosion {
+  &:before {
+    content: $BnBFontCorrosion; 
+  }
+}
+.BnBFontCryo {
+  &:before {
+    content: $BnBFontCryo; 
+  }
+}
+.BnBFontExplosivCryo {
+  &:before {
+    content: $BnBFontExplosivCryo; 
+  }
+}
+.BnBFontExplosive {
+  &:before {
+    content: $BnBFontExplosive; 
+  }
+}

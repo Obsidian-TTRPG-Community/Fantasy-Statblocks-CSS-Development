@@ -1,0 +1,41 @@
+@use '../../shared-variables/dispalign-variables' as *;
+
+.statblock.basic-bnb-familiar-layout {
+
+  .statblock-item-container.inline-container.statblock-item-inline.move-shat {
+    display: flex;
+    align-content: $center;
+    flex-wrap: wrap-reverse;
+    justify-content: $center;
+
+  }
+
+  .statblock-item-container.inline-container.statblock-item-inline.familiar-tams {
+    display: grid;
+    align-content: $center;
+    align-items: $center;
+    justify-content: stretch;
+    padding: 0.5rem;
+    background-color: rgba(224, 225, 221, 0.9);
+    grid-row: 2;
+    grid-template-columns: repeat(2, 1fr);
+
+    & .health, .regen, .shield, .charge, .armor, .repair, .traits {
+      line-height: 1;
+      position: relative;
+      display: inline;
+      box-sizing: border-box;
+      width: 1rem;
+      padding-left: 0.1875rem;
+
+      & .property-name {
+        font-family: var(--statblock-property-name-font-family);
+        font-weight: 700;
+      }
+
+      & p {
+        font-family: var(--statblock-content-font);
+      }
+    }
+  }
+}

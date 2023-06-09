@@ -1,0 +1,21 @@
+@use '../../shared-variables/common-colors' as *;
+
+.statblock[class*="bnb"] {
+  .property {
+    &.Actions,.Mayhem,.Loot {
+
+      & .property-name {
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.statblock.basic-bnb-bestiary-layout .actions {
+  display: inline-block;
+  word-break: break-word;
+}
+
+.statblock[class*="bnb"] .property-text {
+  font-family: var(--statblock-content-font);
+}

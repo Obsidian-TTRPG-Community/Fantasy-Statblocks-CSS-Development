@@ -1,0 +1,124 @@
+@use "attribution";
+@use "pf2e-glyphs";
+@use "style-settings";
+@use "statblock-types" as statblocks;
+@use "../themes/default" as default;
+
+$statblock-content-text-indent-size: 1em;
+$statblock-content-container-spacing: 0.25em;
+
+$statblock-content-padding: 0.5em;
+$statblock-content-margin: 0.5em 2px;
+
+
+@each $block_name in statblocks.$names {
+	.statblock.#{$block_name} {
+		.statblock-content {
+			background-color: var(--statblock-background-color);
+			border: var(--statblock-border-size) var(--statblock-border-color) solid;
+			box-shadow: none;
+			color: var(--statblock-property-font-color);
+			display: flex;
+			font-family: var(--statblock-content-font);
+			font-size: var(--statblock-content-font-size);
+			margin: $statblock-content-margin;
+			padding: $statblock-content-padding;
+			gap: 1rem;
+
+
+			.statblock-detached {
+				position: absolute;
+				top: -9999px;
+			}
+
+			.statblock-item-container {
+				margin: 0;
+				padding: 0;
+			}
+
+			.statblock-item-inline {
+				align-content: flex-start;
+				align-items: baseline;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: flex-start;
+				margin: 0;
+				padding: 0;
+			}
+
+			& > .column {
+				width: var(--statblock-column-width);
+
+				& > .property-container {
+					& > .line:has(> .property-name) {
+						margin-left: $statblock-content-text-indent-size;
+					}
+
+					& > .line > .property-name {
+						margin-left: -$statblock-content-text-indent-size;
+					}
+				}
+
+				& .traits-container {
+					& > .statblock-trait-prop {
+						& > .property:has(> .property-name) {
+							margin-left: $statblock-content-text-indent-size;
+						}
+
+						& > .property > .property-name {
+							margin-left: -$statblock-content-text-indent-size;
+						}
+					}
+				}
+
+				& > :is(.statblock-item-container, .statblock-item-inline) {
+					// block spacing of containers
+					&:has(.line, .property) {
+						margin-block: $statblock-content-container-spacing;
+
+						// remove margin bottom on last child
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				& > .statblock-item-container:has(.tapered-rule) {
+					margin-block: $statblock-content-container-spacing;
+				}
+
+				& > .statblock-item-inline:has(.name) + .statblock-item-container:has(.tapered-rule) {
+					margin-top: 0;
+				}
+
+				& > .statblock-item-inline:has(.rare_01,
+					.rare_02,
+					.rare_03,
+					.rare_04,
+					.alignment,
+					.size,
+					.xp,
+					.kingdom_xp,
+					.trait_01,
+					.trait_02,
+					.trait_03,
+					.trait_04,
+					.trait_05,
+					.trait_06,
+					.trait_07) {
+					row-gap: var(--statblock-traits-gap);
+
+					margin-bottom: $statblock-content-container-spacing * 2;
+				}
+
+				/* Hazard Block Specific */
+				@if $block_name == "pathfinder-2e-hazard-layout" {
+					& > .statblock-item-container:has(.effect) {
+						margin-left: $statblock-content-text-indent-size;
+					}
+				}
+			}
+		}
+	}
+}
