@@ -61,6 +61,20 @@ settings:
         label: Kingmaker
         value: pathfinder-2e-influence-layout-theme-kingmaker
   -
+    id: layout-theme-item
+    title: Item Statblock Theme
+    description: The theme of the item statblock
+    type: class-select
+    allowEmpty: false
+    default: pathfinder-2e-item-layout-theme-default
+    options:
+    -
+        label: Default
+        value: pathfinder-2e-item-layout-theme-default
+    -
+        label: Kingmaker
+        value: pathfinder-2e-item-layout-theme-kingmaker
+  -
     id: layout-theme-misc
     title: Misc Statblock Theme
     description: The theme of the misc statblock
@@ -74,6 +88,20 @@ settings:
     -
         label: Kingmaker
         value: pathfinder-2e-misc-layout-theme-kingmaker
+  -
+    id: layout-theme-plane
+    title: Plane Statblock Theme
+    description: The theme of the plane statblock
+    type: class-select
+    allowEmpty: false
+    default: pathfinder-2e-plane-layout-theme-default
+    options:
+    -
+        label: Default
+        value: pathfinder-2e-plane-layout-theme-default
+    -
+        label: Kingmaker
+        value: pathfinder-2e-plane-layout-theme-kingmaker
   -
     id: layout-theme-quest
     title: Quest Statblock Theme
