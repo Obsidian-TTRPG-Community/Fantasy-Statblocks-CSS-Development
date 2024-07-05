@@ -3,6 +3,8 @@
     "version": "1.5.0",
     "scripts": {
         "dev": "node ./esbuild.config.mjs",
+        "dev-pf2e": "node ./esbuild.config.mjs pf2e",
+        "dev-bnb": "node ./esbuild.config.mjs bnb",
         "build": "node ./esbuild.config.mjs production"
     },
     "devDependencies": {

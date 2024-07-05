@@ -19,7 +19,7 @@ const dir = "./";
 /** Paths for final file */
 /** PF2E */
 const pf2efileProd = `${dir}/Basic-Pathfinder-2e-Layout.css`;
-const pf2efileDev = `${dir}/Basic-Pathfinder-2e-Layout-DEV.css`;
+const pf2efileDev = process.argv[3] || `${dir}/Basic-Pathfinder-2e-Layout-DEV.css`;
 
 const buildPF2E = async () => {
 	const context = await esbuild.build({
@@ -48,7 +48,7 @@ const buildPF2E = async () => {
 
 /** BNB Bestiary */
 const bnbfileProd = `${dir}/BnB-Layout.css`;
-const bnbfileDev = `${dir}/BnB-Layout-DEV.css`;
+const bnbfileDev = process.argv[3] || `${dir}/BnB-Layout-DEV.css`;
 
 const buildBNB = async () => {
 	const context = await esbuild.build({
@@ -76,5 +76,9 @@ const buildBNB = async () => {
 };
 
 // Call the build functions
-buildPF2E().catch(() => process.exit(1));
-buildBNB().catch(() => process.exit(1));
+const buildAll = prod || !process.argv[2];
+if (buildAll || process.argv[2] === 'pf2e') {
+	buildPF2E().catch(() => process.exit(1));
+} else if (buildAll || process.argv[2] === 'bnb') {
+	buildBNB().catch(() => process.exit(1));
+}
