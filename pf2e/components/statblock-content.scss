@@ -25,6 +25,47 @@ $statblock-content-margin: 0.5em 2px;
 			padding: $statblock-content-padding;
 			gap: 1rem;
 
+			// Experimental Layout Specific
+			@if $block_name == "experimental-pathfinder-2e-layout" {
+				.statblock-item-container.statblock-trait-prop .property.attacks > .property-name  {
+					font-weight: normal;
+					font-style: normal;
+				}
+
+				// Style .oneline containers to show all props inline separated by semicolons.
+				.inline-container.oneline {
+					display: block;
+
+					*:not(.dice-roller) {
+						display: inline;
+					}
+					
+					& > .statblock-inline-item:not(:first-child) .property-name {
+						margin-right: 0;
+						&::before {
+							content: "; ";
+							font-weight: normal;
+						}
+					}
+				}
+
+				// These containers denote that all props except the first are just notes and
+				// should be displayed inline, but shouldn't have property names
+				.inline-container.withnote {
+					* {
+						display: inline;
+					}
+
+					& > .statblock-inline-item:not(:first-child) .property-name {
+						display: none;
+					}
+				}
+
+				// Make callouts within statblocks visible.
+				.callout {
+					mix-blend-mode: normal;
+				}
+			}
 
 			.statblock-detached {
 				position: absolute;
@@ -92,24 +133,26 @@ $statblock-content-margin: 0.5em 2px;
 					margin-top: 0;
 				}
 
-				& > .statblock-item-inline:has(.rare_01,
-					.rare_02,
-					.rare_03,
-					.rare_04,
-					.alignment,
-					.size,
-					.xp,
-					.kingdom_xp,
-					.trait_01,
-					.trait_02,
-					.trait_03,
-					.trait_04,
-					.trait_05,
-					.trait_06,
-					.trait_07) {
-					row-gap: var(--statblock-traits-gap);
+				@if $block_name != "experimental-pathfinder-2e-layout" {
+					& > .statblock-item-inline:has(.rare_01,
+						.rare_02,
+						.rare_03,
+						.rare_04,
+						.alignment,
+						.size,
+						.xp,
+						.kingdom_xp,
+						.trait_01,
+						.trait_02,
+						.trait_03,
+						.trait_04,
+						.trait_05,
+						.trait_06,
+						.trait_07) {
+							row-gap: var(--statblock-traits-gap);
 
-					margin-bottom: $statblock-content-container-spacing * 2;
+							margin-bottom: $statblock-content-container-spacing * 2;
+					}
 				}
 
 				/* Hazard Block Specific */

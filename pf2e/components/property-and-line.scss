@@ -23,5 +23,15 @@
 		.property {
 			line-height: var(--statblock-property-line-height);
 		}
+
+		// Override the em color and weight set in font-styling
+		.property-name strong > em {
+			color: var(--active-traits-name-font-color);
+			font-weight: var(--statblock-traits-name-font-weight);
+		}
 	}
+}
+
+.statblock.experimental-pathfinder-2e-layout .property-name {
+	margin-right: 0;
 }
