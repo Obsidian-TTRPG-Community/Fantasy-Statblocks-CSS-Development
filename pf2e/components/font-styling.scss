@@ -14,12 +14,17 @@ $statblock-ul-margin: 0 0.5em;
 
 @each $block_name in statblocks.$names {
 	.statblock.#{$block_name} {
+		
 		a,
 		a:-webkit-any-link,
 		a.internal-link {
 			color: $statblock-font-color-blue;
-			font-weight: var(--statblock-property-name-font-weight);
-			text-decoration: none;
+			@if $block_name != "experimental-pathfinder-2e-layout" {
+				font-weight: var(--statblock-property-name-font-weight);
+				text-decoration: none;
+			} @else {
+				text-decoration: underline;
+			}
 		}
 
 		b,
@@ -33,8 +38,12 @@ $statblock-ul-margin: 0 0.5em;
 		em,
 		.cm-em {
 			font-style: italic;
-			color: $statblock-font-color-purple;
-			font-weight: 500;
+
+			/* Don't override the weight and color for italics within the statblock name */
+			:not(.property-name) & {
+				color: $statblock-font-color-purple;
+				font-weight: 500;
+			}
 		}
 
 		ul {

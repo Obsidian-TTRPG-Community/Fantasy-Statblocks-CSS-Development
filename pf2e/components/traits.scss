@@ -9,7 +9,6 @@ $statblock-trait-text-color: rgb(255, 255, 255);
 $statblock-trait-font-weight: 900;
 $statblock-trait-font-style: normal;
 
-
 @each $block_name in statblocks.$names {
 	.statblock.#{$block_name} {
 
@@ -20,75 +19,157 @@ $statblock-trait-font-style: normal;
 			font-style: $statblock-trait-font-style !important;
 		}
 
+		@if $block_name != "experimental-pathfinder-2e-layout" {
+			.rare_01 {
+				background-color: var(--statblock-color-common) !important;
+				/* common */
+			}
 
-		.rare_01 {
-			background-color: var(--statblock-color-common) !important;
-			/* common */
-		}
+			.rare_02 {
+				background-color: var(--statblock-color-uncommon) !important;
+				/* uncommon */
+			}
 
-		.rare_02 {
-			background-color: var(--statblock-color-uncommon) !important;
-			/* uncommon */
-		}
+			.rare_03 {
+				background-color: var(--statblock-color-rare) !important;
+				/* rare */
+			}
 
-		.rare_03 {
-			background-color: var(--statblock-color-rare) !important;
-			/* rare */
-		}
+			.rare_04 {
+				background-color: var(--statblock-color-unique) !important;
+				/* unique */
+			}
 
-		.rare_04 {
-			background-color: var(--statblock-color-unique) !important;
-			/* unique */
-		}
+			.alignment {
+				background-color: var(--statblock-color-alignment) !important;
+			}
 
-		.alignment {
-			background-color: var(--statblock-color-alignment) !important;
-		}
+			.size {
+				background-color: var(--statblock-color-size) !important;
+			}
 
-		.size {
-			background-color: var(--statblock-color-size) !important;
-		}
 
-		.xp,
-		.kingdom_xp,
-		.trait_01,
-		.trait_02,
-		.trait_03,
-		.trait_04,
-		.trait_05,
-		.trait_06,
-		.trait_07 {
-			background-color: var(--statblock-color-trait) !important;
-		}
+			.xp,
+			.kingdom_xp,
+			.trait_01,
+			.trait_02,
+			.trait_03,
+			.trait_04,
+			.trait_05,
+			.trait_06,
+			.trait_07 {
+				background-color: var(--statblock-color-trait) !important;
+			}
 
-		.rare_01,
-		.rare_02,
-		.rare_03,
-		.rare_04,
-		.alignment,
-		.size,
-		.xp,
-		.kingdom_xp,
-		.trait_01,
-		.trait_02,
-		.trait_03,
-		.trait_04,
-		.trait_05,
-		.trait_06,
-		.trait_07 {
-			color: $statblock-trait-text-color !important;
-			font-size: 12px;
-			font-style: $statblock-trait-font-style !important;
-			font-weight: $statblock-trait-font-weight !important;
-			letter-spacing: 0.01em;
-			min-width: 4em;
-			margin: 0 var(--statblock-traits-gap) 0 0;
-			padding: 0.4em 1.1em 0.2em;
-			text-align: center;
-			text-transform: uppercase;
+			.rare_01,
+			.rare_02,
+			.rare_03,
+			.rare_04,
+			.alignment,
+			.size,
+			.xp,
+			.kingdom_xp,
+			.trait_01,
+			.trait_02,
+			.trait_03,
+			.trait_04,
+			.trait_05,
+			.trait_06,
+			.trait_07 {
+				color: $statblock-trait-text-color !important;
+				font-size: 12px;
+				font-style: $statblock-trait-font-style !important;
+				font-weight: $statblock-trait-font-weight !important;
+				letter-spacing: 0.01em;
+				min-width: 4em;
+				margin: 0 var(--statblock-traits-gap) 0 0;
+				padding: 0.4em 1.1em 0.2em;
+				text-align: center;
+				text-transform: uppercase;
 
-			span.property-name {
-				display: none;
+				span.property-name {
+					display: none;
+				}
+			}
+		} @else {
+			// Over-specifying here to win the selector war with some of the generic property styling
+			.pf2e-traits.statblock-item-container.property-container {
+
+				margin: 0;
+
+				> .line.traits {
+					margin: 0;
+					display: block;
+
+				}
+
+				.property-name {
+					display: none;
+				}
+
+				ul {
+					row-gap: var(--statblock-traits-gap);
+					display: flex;
+					flex-flow: row wrap;
+					place-content: start;
+					justify-content: flex-start;
+					padding: 0;
+					margin: 0;
+					list-style: none;
+				}
+
+
+				li {
+					display: block;
+					background-color: var(--statblock-color-trait);
+					margin: 0 var(--statblock-traits-gap) 0 0;
+					color: $statblock-trait-text-color !important;
+					font-size: 12px;
+					font-style: $statblock-trait-font-style !important;
+					font-weight: $statblock-trait-font-weight !important;
+					letter-spacing: 0.01em;
+					min-width: 4em;
+					text-align: center;
+					text-transform: uppercase;
+					padding: 0;
+
+					&:not(:has(> .alignment, > .rarity, > .size)),
+					& > span:is(.alignment, .rarity, .size) {
+						padding: 0.4em 1.1em 0.2em;
+						line-height: var(--statblock-property-line-height);
+					}
+
+					& > span:is(.alignment, .rarity, .size) {
+						width: 100%;
+						height: 100%;
+						display: block;
+					}
+
+					// Remove bullets added by themes
+					&::before {
+						display: none;
+					}
+
+					// Some sensible default styling to preserve the trait appearance
+					strong, i, em, b {
+						color: $statblock-trait-text-color;
+					}
+
+					a,
+					a:-webkit-any-link,
+					a.internal-link {
+					    color: $statblock-trait-text-color;
+						text-decoration: none;
+						text-transform: uppercase;
+						font-style: normal;
+					}
+				}
+
+				@each $trait in (common uncommon rare unique alignment size) {
+					li > .#{$trait} {
+						background-color: var(--statblock-color-#{$trait});
+					}
+				}
 			}
 		}
 	}
