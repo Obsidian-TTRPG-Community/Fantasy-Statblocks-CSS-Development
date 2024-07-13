@@ -19,7 +19,7 @@ $statblock-trait-font-style: normal;
 			font-style: $statblock-trait-font-style !important;
 		}
 
-		@if $block_name != "experimental-pathfinder-2e-layout" {
+		@if $block_name != "pathfinder-2e-creature-layout" {
 			.rare_01 {
 				background-color: var(--statblock-color-common) !important;
 				/* common */

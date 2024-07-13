@@ -19,7 +19,7 @@ $statblock-ul-margin: 0 0.5em;
 		a:-webkit-any-link,
 		a.internal-link {
 			color: $statblock-font-color-blue;
-			@if $block_name != "experimental-pathfinder-2e-layout" {
+			@if $block_name != "pathfinder-2e-creature-layout" {
 				font-weight: var(--statblock-property-name-font-weight);
 				text-decoration: none;
 			} @else {
